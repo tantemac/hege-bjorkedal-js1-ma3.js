@@ -4,9 +4,9 @@ const sum = (a, b) => a - b;
 
 // question 2
 
-const sporstUrl = "https://api.rawg.io/api/games?genres=sports";
+const sportsUrl = "https://api.rawg.io/api/games?genres=sports";
 
-fetch(sportsUrl);
+fetch(sportsUrl)
 	.then(function(response) {
 		return response.json();
 	})
@@ -24,30 +24,27 @@ fetch(sportsUrl);
 			console.log(games[i].name);
 		}
 	}
-	gameResultLoop();
 
 // question 3
 
-const replaceWord = document.querySelector("p");
-replaceWord.innerText = animals;
-const changeAnimal = animals.replace(/cats/, "giraffes");
-replaceWord.innerText = changeAnimal;
+const text = "These cats are outrageous.";
+const newText = text.replace("cats","giraffes");
 
 // question 4
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
+const userId = params.get("userId");
 
-let userId = "7";
-
-if (params.has("")) {
-	userId = params.get("userId");
+if(userId) {
+	if(Number(userId < 10) {
+		document.location.href = "first.html";
+	}
+	else (Number(userId >= 10) {
+		document.location.href = "second.html";
+	} 
 }
-
-const baseUrl = "https://my.site.com?userId=7";
-
-const url = "https://my.site.com?userId=7" + userID;
-
+document.location.href = "third.html";
 
 // question 5
 
@@ -59,7 +56,7 @@ container.removeChild(button);
 // question 6
 
 const container = document.querySelector(".animals");
-const cowElement = document.querySelector(".cows");
+const elephantsElement = document.querySelector(".elephants");
 
 const listElement = document.createElement("li");
 listElement.className = "parrots";
@@ -69,25 +66,26 @@ listElement.appendChild(listElementContent);
 
 container.appendChild(listElement);
 
-listElement.after(cowElement);
+listElement.after(elephantsElement);
 
 // question 7
 const baseUrl = "https://api.rawg.io/api/games/3801";
 
-fetch(baseUrl);
+fetch(baseUrl)
 	.then(function(response) {
 		return response.json();
 	});
 	.then(function(json) {
 		createDetails(json);
 	})
-	.catch(functin(error) {
+	.catch(function(error) {
 		console.dir(error);
 	});
 
 	function createDetails(details) {
 		const container = document.querySelector(".rating");
-		container.innerText = rating.json;
+		container.innerText = details.rating;
 	}
 
 	createDetails();
+
